@@ -1,0 +1,23 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jax-cce"
+version = "0.1.0"
+description = "Memory-efficient fused linear cross-entropy loss for JAX. Computes cross_entropy(x @ w.T, labels) without materializing the full logits tensor."
+readme = "README.md"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Mehul Totala" }]
+requires-python = ">=3.11"
+dependencies = ["jax"]
+
+[project.urls]
+Homepage = "https://github.com/Coffeempty/jax-cce"
+Repository = "https://github.com/Coffeempty/jax-cce"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/jax_cce"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
